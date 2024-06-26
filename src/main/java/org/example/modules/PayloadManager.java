@@ -33,7 +33,7 @@ public class PayloadManager {
         auth.setPassword("password123");
         Gson gson = new Gson();
         String jsonStringBooking = gson.toJson(auth);
-        System.out.println(jsonStringBooking);
+//        System.out.println("here is null" +jsonStringBooking);
         return jsonStringBooking;
     }
 
