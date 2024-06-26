@@ -10,7 +10,9 @@ public class BookingResponse {
     private Integer bookingid;
     @SerializedName("booking")
     @Expose
-    private Booking Gsondemo;
+    private Booking booking;
+
+
 
     public Integer getBookingid() {
         return bookingid;
@@ -20,12 +22,13 @@ public class BookingResponse {
         this.bookingid = bookingid;
     }
 
+
     public Booking getBooking() {
-        return Gsondemo;
+        return booking;
     }
 
-    public void setBooking(Booking Gsondemo) {
-        this.Gsondemo = Gsondemo;
+    public void setBooking(Booking booking) {
+        this.booking = booking;
     }
 
 }

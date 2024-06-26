@@ -7,6 +7,7 @@
                 <methods>
 
                     <include name="testCreateBooking"/>
+                    <include name="testVerifyBooking"/>
                     <include name="testCreateAndUpdateBooking"/>
                     <include name="testDeleteBooking"/>
                 </methods>

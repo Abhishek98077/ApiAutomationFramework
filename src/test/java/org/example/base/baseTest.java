@@ -17,15 +17,20 @@ public class baseTest {
 
     public RequestSpecification requestSpecification;
     public ValidatableResponse validatableResponse;
-    public AssertionError assertionError;
     public PayloadManager payloadManager;
     public Response response;
+//    public assertThat
 
 
     @BeforeMethod(alwaysRun = true)
     public void setUpConfig() {
         payloadManager = new PayloadManager();
-        requestSpecification = RestAssured.given();
+
+        requestSpecification = new RequestSpecBuilder()
+                .setBaseUri(APIConstant.BASE_URL)
+                .addHeader("ContentType","application/json")
+                .build().log().all();
+
     }
 
     public String getToken(){

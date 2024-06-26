@@ -1,10 +1,7 @@
 package org.example.modules;
 
 import com.google.gson.Gson;
-import org.example.payloads.pojos.Auth_payload;
-import org.example.payloads.pojos.Booking;
-import org.example.payloads.pojos.Bookingdates;
-import org.example.payloads.pojos.TokenResponse;
+import org.example.payloads.pojos.*;
 
 public class PayloadManager {
 
@@ -30,8 +27,8 @@ public class PayloadManager {
     }
 
     public String setToken(){
-        Auth_payload auth = new Auth_payload();
 
+        Auth_payload auth = new Auth_payload();
         auth.setUsername("admin");
         auth.setPassword("password123");
         Gson gson = new Gson();
@@ -40,11 +37,6 @@ public class PayloadManager {
         return jsonStringBooking;
     }
 
-//    public String getTokenFromJSON(String TokenResponse){
-//        Gson gson = new Gson();
-//       TokenResponse = gson.fromJson(TokenResponse, TokenResponse.getClass());
-//       return TokenResponse.getToken();
-//    }
 
     public String getTokenFromJSON(String tokenResponse){
         gson = new Gson();
@@ -52,9 +44,10 @@ public class PayloadManager {
         return  tokenResponse1.getToken();
     }
 
-//    public String getTokenFromJson(String tokenResponse){
-//        gson = new Gson();
-//        TokenResponse tokenResponse1 =gson.fromJson(tokenResponse,TokenResponse.class);
-//    return tokenResponse1,getToken();
-//    }
+    public BookingResponse bookingResponseJava(String responseString){
+        gson = new Gson();
+        BookingResponse bookingResponse = gson.fromJson(responseString,BookingResponse.class);
+        return bookingResponse;
+    }
+
 }
